@@ -88,7 +88,9 @@ li{
     transition: .5s all ease-in-out;
 }
 
-
+.set-width{
+    width: 70%;
+}
 
 @media only screen and (max-width: 600px) {
     .img-slider-home{
@@ -122,6 +124,10 @@ li{
 
     .icon-section-gioithieu{
         font-size: 40px;
+    }
+
+    .set-width{
+        width: 100%;
     }
 
 }
