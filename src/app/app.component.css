@@ -5,6 +5,9 @@ body{
 
 .header{
     background-color: #000;
+    position: fixed;
+    width: 100%;
+    z-index: 999999;
 }
 
 .container{
@@ -202,6 +205,45 @@ li{
     display: block !important;
 }
 
+.footer{
+    background-image: url('../assets/footer.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    width: 100%;
+    color: #fff;
+    font-weight: 300;
+    padding: 3rem 2rem;
+}
+
+.layout-footer{
+    display: grid;
+    grid-template-columns: 1.5fr 0.75fr 1fr 1.25fr;
+    gap: 30px;
+}
+
+.footer-title{
+    font-family: 'Lobster', cursive;
+}
+
+.fanpage-image{
+    width: 280px;
+    height: 140px;
+    background-color: red;
+    margin-top: 1rem;
+}
+
+.fanpage-image img{
+    width: 75px;
+    height: 70px;
+    background-color: #fff;
+}
+
+.layout-footer-responsive{
+    display: none;
+}
+
 @media only screen and (max-width: 600px) {
     .image-header li{
         display: none;
@@ -236,4 +278,21 @@ li{
     .cart-menu{
         display: none !important;
     }
+
+    .layout-footer{
+        grid-template-columns: auto;
+        display: none;
+    }
+
+    .layout-footer-responsive{
+       display: block;
+    }
+
+    .group-footer{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: .5rem;
+        border-bottom: 1px solid #fff;
+    }
+
 }
