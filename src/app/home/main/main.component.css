@@ -1,6 +1,23 @@
+li{
+    list-style: none;
+}
+
+.margin-auto{
+    margin: 0 auto;
+}
 
 .slider-home{
     padding-top: 5rem;
+}
+
+.layout-section-gioithieu{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+}
+
+.section-gioithieu{
+    padding: 6rem 3rem;
+    background-color: #F7F7F7;
 }
 
 .img-slider-home{
@@ -11,8 +28,100 @@
     height: 600px;
 }
 
+.section-gioithieu-right{
+    margin: 0 auto;
+}
+
+.section-gioithieu-right img{
+    width: 350px;
+    height: 100%;
+}
+
+.section-gioithieu-left{
+    padding: 2rem;
+}
+
+.section-gioithieu-left h2{
+    font-family: 'Lobster', cursive;
+}
+
+.list-icon-gioithieu{
+    display: flex;
+}
+
+.list-icon-gioithieu li{
+    padding: 1rem 0;
+}
+
+.margin-left-2{
+    margin-left: 2rem;
+}
+
+.icon-section-gioithieu{
+    padding: 1.5rem 1.5rem;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 54px;
+}
+
+.icon-section-gioithieu:hover{
+    background-color: #FEC524;
+    border: 2px solid #FEC524;
+    color: #fff;
+    transition: .5s all ease-in-out;
+}
+
+.dathang-gioithieu{
+    text-decoration: none;
+    color: #000;
+    background-color: #FEC524;
+    padding: .8rem 2.5rem;
+    border-radius: 1.5rem;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.dathang-gioithieu:hover{
+    color: #fff;
+    transition: .5s all ease-in-out;
+}
+
+
+
 @media only screen and (max-width: 600px) {
     .img-slider-home{
         height: 100%;
     }
+
+    .layout-section-gioithieu{
+        grid-template-columns: auto;
+    }
+
+    .layout-section-gioithieu{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .section-gioithieu{
+        padding: 3rem 1rem;
+    }
+
+    .section-gioithieu-right{
+        display: none;
+    }
+
+    .section-gioithieu-left{
+        padding: 0rem;
+    }
+
+    .margin-left-2{
+        margin-left: 1rem;
+    }
+
+    .icon-section-gioithieu{
+        font-size: 40px;
+    }
+
 }
