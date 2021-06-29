@@ -1,8 +1,6 @@
-import { Component, Directive } from '@angular/core';
-
-// @Directive({
-//   selector: 
-// })
+import { Component } from '@angular/core';
+// import { Store } from '@ngrx/store';
+// import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +10,11 @@ import { Component, Directive } from '@angular/core';
 
 export class AppComponent {
   
-  subCart = false
-
-  showSubCart(value: any){
-    this.subCart = !value
-    console.log(this.subCart)
-  }
+  // statusMenu$: Observable<any>;
+ 
+  // constructor(private store: Store<{ statusMenu: any }>) {
+  //   this.statusMenu$ = store.select('statusMenu');
+  // }
 
 
 }

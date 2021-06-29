@@ -107,14 +107,35 @@ li{
     left: 50%;
 }
 
-.sub-menu{
+
+
+/* CSS dùng để show sub-menu */
+/* Lưu ý nav-option là thẻ cha của sub-menu */
+.nav-option > .sub-menu{
     width: 460px;
     background-color: #fff;
     padding: .4rem .8rem;
     position: absolute;
-    top: 3.3rem;
+    top: 3.8rem;
     right: 0;
+    box-shadow: 0 0 5px rgb(0 0 0 / 20%) !important;
+    display: none;
 }
+
+.nav-option > .sub-menu::after{
+    content: "";
+    position: absolute;
+    top: -1.2rem;
+    left: 90%;
+    border-width: 10px 18px !important;
+    border-style: solid;
+    border-color: transparent transparent #ffffff transparent;
+}
+
+.nav-option:hover .sub-menu{
+    display: block;
+}
+/* CSS dùng để show sub-menu */
 
 .sub-menu li{
     text-align: center;
@@ -173,6 +194,14 @@ li{
     color: #fff;
 }
 
+.cart-menu-responsive{
+    display: none !important;
+}
+
+.cart-menu{
+    display: block !important;
+}
+
 @media only screen and (max-width: 600px) {
     .image-header li{
         display: none;
@@ -188,9 +217,23 @@ li{
         border-radius: 4px;
     }
 
-    .sub-menu{
+    .nav-option > .sub-menu::after{
+        left: 70%;
+        display: none !important;
+    }
+
+    .nav-option > .sub-menu{
         width: 350px;
         top: 4rem !important;
         right: -4rem !important;
+        display: none !important;
+    }
+
+    .cart-menu-responsive{
+        display: block !important;
+    }
+
+    .cart-menu{
+        display: none !important;
     }
 }

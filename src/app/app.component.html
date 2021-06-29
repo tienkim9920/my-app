@@ -12,14 +12,15 @@
             </li>
         </div>
         <div class="cart-header">
-            <li class="position-relative">
-                <a class="cart-menu" (click)="showSubCart(this.subCart)">
+            <li class="nav-option position-relative">
+                <a class="cart-menu">
+                    <i class="fa fa-shopping-cart" style="font-size:30px; cursor: pointer;"></i>
+                </a>
+                <a class="cart-menu-responsive" routerLink="/detail">
                     <i class="fa fa-shopping-cart" style="font-size:30px; cursor: pointer;"></i>
                 </a>
                 <span class="count-cart text-white">0</span>
-                <div class="sub-menu animate__animated animate__zoomIn animate__faster"
-                    *ngIf="subCart"
-                    >
+                <div class="sub-menu animate__animated animate__zoomIn animate__faster">
                     <li><a>Giỏ Hàng</a></li>
                     <div class="group-detail-cart">
                         <div class="detail-cart">
@@ -40,8 +41,8 @@
                         <span>Tổng tiền:</span>
                         <span style="color: red; font-weight: 600;">50.000 VNĐ</span>
                     </div>
-                    <div class="view-cart" (click)="showSubCart(this.subCart)"><a routerLink="/detail">XEM GIỎ HÀNG</a></div>
-                </div>
+                    <div class="view-cart"><a routerLink="/detail">XEM GIỎ HÀNG</a></div>
+                </div> 
             </li>
             <li class="nav-bars">
                 <a data-bs-toggle="offcanvas" href="#navBars" aria-controls="navBars"><i class="fa fa-bars" style="font-size:24px"></i></a>
