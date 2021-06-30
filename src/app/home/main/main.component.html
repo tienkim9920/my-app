@@ -52,3 +52,74 @@
     </div>
 </div>
 
+<div class="section-bonus">
+  <div class="container layout-section-bonus">
+    <div class="section-bonus-right fix-colum-bonus border-bonus">
+      <a href="#"><img class="image-bonus" src="https://firebasestorage.googleapis.com/v0/b/todo-app-tienkim.appspot.com/o/noubakery%2Fbanner1.jpg?alt=media&token=0676d45d-b1da-42d6-aba9-1c00728582c6" alt=""></a>
+    </div>
+    <div class="section-bonus-left fix-colum-bonus border-bonus">
+      <a href="#"><img class="image-bonus" src="https://firebasestorage.googleapis.com/v0/b/todo-app-tienkim.appspot.com/o/noubakery%2Fbanner2.jpg?alt=media&token=11daca38-539a-46e7-8604-5fcc79f10d28" alt=""></a>
+    </div>
+  </div>
+</div>
+
+<div class="section-menu">
+  <div class="container layout-section-menu">
+    <div class="menu-title">
+      <h2>Menu <span style="color: #FEC524;">trong ngày</span></h2>
+    </div>
+    <div class="mr-pd-menu">
+      <ngx-slick-carousel class="carousel" 
+        #slickModal="slick-carousel" 
+        [config]="slideConfig"
+        responsive="breakpoints">
+        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+          <div class="group-slider-product">
+              <div class="menu-product">
+                <a href="#"><img class="menu-product-image" src="{{ slide.img }}" alt=""></a>
+              </div>
+            <div class="product-box">
+              <!-- <div class="pb-price">
+                {{ 70000 | currency: 'VND' }}
+              </div> -->
+              <div class="pb-title">
+                <span>Cheese cakes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ngx-slick-carousel>   
+    </div>
+  </div>
+</div>
+
+<div class="section-lydo">
+  <div class="container layout-section-lydo">
+    <div class="menu-title">
+      <h2>Tại sao chọn <span style="color: #FEC524;">Nou Bakery</span></h2>
+    </div>
+    <div class="group-lydo">
+      <div class="col-lydo">
+        <img class="image-lydo" src="//theme.hstatic.net/200000232135/1000682292/14/img_item_support_home_1.png?v=274" alt="Giao hàng nhanh chóng">
+        <div class="support-text">
+          <h6>Giao hàng nhanh chóng</h6>
+          <span>Giao hàng từ 30-40 kể từ lúc đặt hàng</span>
+        </div>
+      </div>
+      <div class="col-lydo">
+        <img class="image-lydo" src="//theme.hstatic.net/200000232135/1000682292/14/img_item_support_home_2.png?v=274" alt="Sản phẩm chất lượng">
+        <div class="support-text">
+          <h6>Sản phẩm chất lượng</h6>
+          <span> Đóng gói cẩn thận, gọn gàng khi đến tay khách hàng</span>
+        </div>
+      </div>
+      <div class="col-lydo">
+        <img class="image-lydo" src="//theme.hstatic.net/200000232135/1000682292/14/img_item_support_home_3.png?v=274" alt="Hỗ trợ 24/7">
+        <div class="support-text">
+          <h6>Hỗ trợ 24/7</h6>
+          <span>Hỗ trợ và lắng nghe ý kiến khác hàng</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,10 @@
+.slick-slider {
+    width: 80%;
+    margin: auto;
+    background: transparent;
+}
+    
+
 li{
     list-style: none;
 }
@@ -92,6 +99,115 @@ li{
     width: 70%;
 }
 
+.image-bonus{
+    width: 570px;
+    height: 310px;
+}
+
+.layout-section-bonus{
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.fix-colum-bonus{
+    margin: 0 auto;
+}
+
+.border-bonus{
+    border: 10px solid #FEC524;
+    overflow: hidden;
+}
+
+.border-bonus:hover .image-bonus{
+    transform: scale(1.2);
+    transition: 1s all ease-in-out;
+    filter: blur(.02rem);
+}
+
+.section-menu{
+    background: url(//theme.hstatic.net/200000232135/1000682292/14/bg_collection_home_1.jpg?v=273);
+    padding: 80px 0;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.menu-title{
+    font-family: 'Lobster', cursive;
+    text-align: center;
+}
+
+.mr-pd-menu{
+    margin: 2rem 0;
+}
+
+.menu-product-image{
+    width: 100%;
+    height: 100%;
+}
+
+.group-slider-product{
+    margin: 0 1rem;
+    background-color: #fff;
+}
+
+.menu-product{
+    padding: 2rem 2rem;
+    border-radius: 2px;
+    border-bottom: 1px solid #ececec;
+}
+
+.product-box{
+    font-size: 1.2rem;
+    padding: .7rem 1rem;
+    /* display: flex;
+    justify-content: space-between; */
+}
+
+.pb-price{
+    color: red;
+}
+
+.pb-title{
+    font-family: 'Open Sans Condensed', sans-serif;
+    letter-spacing: .1rem;
+    text-align: center;
+}
+
+.section-lydo{
+    padding: 80px 0;
+    background-color: #fdfdfd;
+}
+
+.group-lydo{
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.col-lydo{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.image-lydo{
+    width: 70px;
+    height: 70px;
+}
+
+.support-text h6{
+    margin-top: 2rem;
+    font-family: 'Lobster', cursive;
+    font-size: 1.4rem;
+}
+
+.support-text span{
+    /* font-family: 'Open Sans Condensed', sans-serif; */
+    font-weight: 300;
+}
+
 @media only screen and (max-width: 600px) {
     .img-slider-home{
         height: 100%;
@@ -128,6 +244,40 @@ li{
 
     .set-width{
         width: 100%;
+    }
+
+    .layout-section-bonus{
+        padding: 3rem 2rem;
+        grid-template-columns: 1fr;
+    }
+
+    .image-bonus{
+        width: 100%;
+        height: 100%;
+    }
+
+    .section-bonus-left{
+        margin-top: 1rem
+    }
+
+    .section-menu{
+        padding: 50px 0;
+    }
+
+    .menu-title h2{
+        font-size: 1.7rem;
+    }
+
+    .group-slider-product{
+        margin: 0 0 !important;
+    }
+
+    .group-lydo{
+        grid-template-columns: 1fr;
+    }
+
+    .col-lydo{
+        margin: 1rem auto;
     }
 
 }
