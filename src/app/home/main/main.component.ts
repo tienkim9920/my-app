@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-declare var firebase: any
+import { AngularFireDatabase } from '@angular/fire/database';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-main',
@@ -53,18 +54,15 @@ export class MainComponent implements OnInit {
     ]        
   };
 
-  constructor() { }
+  items: Observable<any[]>;
+
+  constructor(public db: AngularFireDatabase) {
+    this.items = db.list('product').valueChanges();
+  }
 
   ngOnInit(): void {
-
-    this.fetchData()
-
+    
   }
 
-  fetchData(){
-    firebase.database().ref('/').on('child_added', (snapshot: any) => {
-      console.log(snapshot)
-    })
-  }
 
 }

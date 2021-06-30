@@ -73,17 +73,14 @@
         #slickModal="slick-carousel" 
         [config]="slideConfig"
         responsive="breakpoints">
-        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+        <div ngxSlickItem *ngFor="let item of items | async" class="slide">
           <div class="group-slider-product">
               <div class="menu-product">
-                <a href="#"><img class="menu-product-image" src="{{ slide.img }}" alt=""></a>
+                <a href="#"><img class="menu-product-image" src="{{ item.image }}" alt=""></a>
               </div>
             <div class="product-box">
-              <!-- <div class="pb-price">
-                {{ 70000 | currency: 'VND' }}
-              </div> -->
               <div class="pb-title">
-                <span>Cheese cakes</span>
+                <span>{{ item.name_product }}</span>
               </div>
             </div>
           </div>

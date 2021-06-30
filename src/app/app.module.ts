@@ -10,6 +10,11 @@ import { ShowcartsDirective } from './showcarts.directive';
 import { StoreModule } from '@ngrx/store';
 import { showmenuReducer } from './redux/showmenu.reducer'
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +23,9 @@ import { showmenuReducer } from './redux/showmenu.reducer'
   imports: [
     [BrowserModule, StoreModule.forRoot({ statusMenu: showmenuReducer })],
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
