@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  firebase: {
+  firebaseConfig: {
     apiKey: "AIzaSyBpKGIKcJPski1Rg_c0LvE_qQz0asBqVxA",
     authDomain: "todo-app-tienkim.firebaseapp.com",
     databaseURL: "https://todo-app-tienkim.firebaseio.com",

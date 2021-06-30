@@ -24,7 +24,7 @@ import { environment } from '../environments/environment';
     [BrowserModule, StoreModule.forRoot({ statusMenu: showmenuReducer })],
     AppRoutingModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
   ],
   providers: [],
