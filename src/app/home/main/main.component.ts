@@ -12,11 +12,11 @@ export class MainComponent implements OnInit {
   title = 'ng-carousel-demo';
   
   slides = [
-    {img: "https://firebasestorage.googleapis.com/v0/b/todo-app-tienkim.appspot.com/o/noubakery%2Fblueberry_cheesecake.jpg?alt=media&token=33ff9813-008e-4b7a-b9dc-c59a5f9f38fe"},
-    {img: "https://firebasestorage.googleapis.com/v0/b/todo-app-tienkim.appspot.com/o/noubakery%2Fchoco.jpg?alt=media&token=4baf093e-718a-4386-a7f7-764bbc7e6b50"},
-    {img: "https://firebasestorage.googleapis.com/v0/b/todo-app-tienkim.appspot.com/o/noubakery%2Foreo.jpg?alt=media&token=f470b00c-7206-4807-8de0-2484742418c9"},
-    {img: "https://firebasestorage.googleapis.com/v0/b/todo-app-tienkim.appspot.com/o/noubakery%2Foreo_cake.jpg?alt=media&token=436431d0-440a-4c47-b45a-4379ffbec6e5"},
-    {img: "https://firebasestorage.googleapis.com/v0/b/todo-app-tienkim.appspot.com/o/noubakery%2Foreo_cheese_cake.jpg?alt=media&token=ff16b834-ed9b-48c1-a982-811d04d24603"},
+    {img: "https://firebasestorage.googleapis.com/v0/b/image-file.appspot.com/o/oreo_cake.jpg?alt=media&token=3a5a29b7-a744-4b6d-a01e-03c1d5e5e869"},
+    {img: "https://firebasestorage.googleapis.com/v0/b/image-file.appspot.com/o/oreo_cheese_cake.jpg?alt=media&token=7ef90322-6823-4269-ac6f-5c0efef53f3c"},
+    {img: "https://firebasestorage.googleapis.com/v0/b/image-file.appspot.com/o/passion_fruit_cheese_cake.jpg?alt=media&token=ecc06887-e0e4-406a-b03f-5114adbcadbf"},
+    {img: "https://firebasestorage.googleapis.com/v0/b/image-file.appspot.com/o/strawberry_jelly.jpg?alt=media&token=bc1ccb2b-fb5e-42c7-b774-29b2e22de4de"},
+    {img: "https://firebasestorage.googleapis.com/v0/b/image-file.appspot.com/o/tiramisu.jpg?alt=media&token=b5c83c54-71cc-4f55-9779-7b3cc5d97f22"},
   ];
   
   slideConfig = {
