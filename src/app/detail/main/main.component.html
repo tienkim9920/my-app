@@ -1,1 +1,44 @@
-<p>Main Detail!</p>
+
+<div class="section-detail-product">
+    <div class="banner-detail"></div>
+    <div class="container">
+        <div class="layout-detail-product">
+            <div class="section-detail-right fix-col-detail">
+                <img class="image-detail-product" src="{{ product.image }}">
+            </div>
+            <div class="section-detail-left fix-col-description">
+                <div class="group-witdh">
+                    <span class="detail-product-title">{{ product.name_product }}</span>
+                    <hr>
+                </div>
+                <div class="group-witdh">
+                    <span class="detail-product-price">{{ 59000 | currency: "VND" }}</span>
+                    <hr>
+                </div>
+                <div class="group-witdh">
+                    <span class="detail-product-size">Chọn cỡ bánh:</span>
+                    <div class="list-size">
+                        <a [ngClass]="clickSize === 'M' ? 'active-size' : ''" (click)="changeSize('M')">M</a>
+                        <a [ngClass]="clickSize === 'L' ? 'active-size' : ''" (click)="changeSize('L')">L</a>
+                    </div>
+                    <hr>
+                </div>
+                <div class="group-witdh">
+                    <input type="button" value="-" class="qty-btn" (click)="countDown(count)">
+                    <input type="text" class="quantity" name="quantity" [ngModel]="count" (ngModelChange)="valueChange($event)">
+                    <input type="button" value="+" class="qty-btn" (click)="countUp(count)">
+                </div>
+                <div class="group-witdh">
+                    <div class="mr-cart">
+                        <a class="btn-add-cart">Đặt món</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="description">
+            <div class="h2-description">Mô tả sản phẩm</div>
+            <hr>
+            <span style="font-weight: 300;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi fuga quibusdam, repellat eveniet deleniti velit reiciendis esse? Placeat officiis sit aspernatur animi. Eaque nostrum eveniet nulla corrupti quae, ea sunt.</span>
+        </div>
+    </div>
+</div>
