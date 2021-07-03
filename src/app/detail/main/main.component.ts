@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 //Import 2 thằng này vào để bắt đầu việc truy vấn dữ liệu
 import { AngularFireDatabase } from '@angular/fire/database';
+import CartsLocal from 'src/app/LocalStorage/carts.store';
 
 @Component({
   selector: 'app-main',
@@ -20,6 +21,8 @@ export class MainComponent implements OnInit {
   clickSize: string = "M"
 
   count: number = 1
+
+  price: any
 
   constructor(private route: ActivatedRoute, public db: AngularFireDatabase) {
 
@@ -46,10 +49,29 @@ export class MainComponent implements OnInit {
   getSize(value: any){
     this.db.list('/size', ref => ref.orderByChild(`idProduct`).equalTo(value)).valueChanges().subscribe(res => {
       this.sizes = res
+      this.price = this.sizes[0].price
     })
   }
 
+  addCart(){
+    const data = {
+      id_product: this.id,
+      name_product: this.product.name_product,
+      size: this.clickSize,
+      price: this.price,
+      image: this.product.image,
+      count: this.count
+    }
+
+    CartsLocal.addProduct(data)
+  }
+
   changeSize(value: string){
+    if (value === 'M'){
+      this.price = this.sizes[0].price
+    }else{
+      this.price = this.sizes[1].price
+    }
     this.clickSize = value
   }
 

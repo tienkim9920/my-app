@@ -12,7 +12,7 @@
                     <hr>
                 </div>
                 <div class="group-witdh">
-                    <span class="detail-product-price">{{ 59000 | currency: "VND" }}</span>
+                    <span class="detail-product-price">{{ price | currency: "VND" }}</span>
                     <hr>
                 </div>
                 <div class="group-witdh">
@@ -29,7 +29,7 @@
                     <input type="button" value="+" class="qty-btn" (click)="countUp(count)">
                 </div>
                 <div class="group-witdh">
-                    <div class="mr-cart">
+                    <div class="mr-cart" (click)="addCart()">
                         <a class="btn-add-cart">Đặt món</a>
                     </div>
                 </div>

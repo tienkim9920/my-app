@@ -76,11 +76,11 @@
         <div ngxSlickItem *ngFor="let item of items;" class="slide">
           <div class="group-slider-product">
               <div class="menu-product">
-                <a [routerLink]="['/detail', item.id]"><img class="menu-product-image" src="{{ item.image }}" alt=""></a>
+                <a [routerLink]="['/detail', item.key]"><img class="menu-product-image" src="{{ item.payload.val().image }}" alt=""></a>
               </div>
             <div class="product-box">
               <div class="pb-title">
-                <span>{{ item.name_product }}</span>
+                <span>{{ item.payload.val().name_product }}</span>
               </div>
             </div>
           </div>

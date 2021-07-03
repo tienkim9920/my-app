@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { ShowcartsDirective } from './showcarts.directive';
 
 import { StoreModule } from '@ngrx/store';
-import { showmenuReducer } from './redux/showmenu.reducer'
+import { cartsReducer } from './redux/carts.reducer'
 
 // Đầu tiên là phải cài đặt npm install firebase @angular/fire
 // Import 4 thằng này vào
@@ -36,7 +36,7 @@ const config = {
     ShowcartsDirective,
   ],
   imports: [
-    [BrowserModule, StoreModule.forRoot({ statusMenu: showmenuReducer })],
+    [BrowserModule, StoreModule.forRoot({ carts: cartsReducer })],
     AppRoutingModule,
     FormsModule,
     HttpClientModule,

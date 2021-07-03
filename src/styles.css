@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+.banner-detail{
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/todo-app-tienkim.appspot.com/o/noubakery%2Fsection_detail.jpg?alt=media&token=0683a53e-d2d3-4c77-9c9d-f533151f4551);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+}
+
+.margin-auto{
+    margin: 0 auto;
+}
+
+.qty-btn{
+    background: #f5f5f5;
+    border: solid 1px #f5f5f5;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    outline: none;
+    height: 32px;
+    width: 32px;
+    text-align: center;
+    border-radius: 0;
+}
+
+.quantity{
+    background: #fff;
+    font-weight: 500;
+    height: 32px;
+    padding: 0;
+    text-align: center;
+    width: 70px;
+    border: 1px solid #f5f5f5;
+    border-left: none;
+    border-right: none;
+    border-radius: 1px;
+    outline: none;
+    font-weight: 300;
+}
+
+.font-general{
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+.btn-add-cart{
+    font-weight: 400;
+    text-transform: uppercase;
+    box-shadow: none;
+    line-height: 22px;
+    border-radius: 0;
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .banner-detail{
+        height: 160px;
+    }
+
+}

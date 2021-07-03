@@ -8,40 +8,40 @@
                 <a routerLink="/" routerLinkActive="nav-active" [routerLinkActiveOptions]="{exact: true}">Trang chủ</a>
             </li>
             <li>
-                <a routerLink="/shop" routerLinkActive="nav-active" [routerLinkActiveOptions]="{exact: true}">Sản phẩm</a>
+                <!-- <a routerLink="/shop" routerLinkActive="nav-active" [routerLinkActiveOptions]="{exact: true}">Sản phẩm</a> -->
             </li>
         </div>
         <div class="cart-header">
             <li class="nav-option position-relative">
                 <a class="cart-menu">
+                    <i class="fa fa-shopping-cart" routerLink="/carts" style="font-size:30px; cursor: pointer;"></i>
+                </a>
+                <a class="cart-menu-responsive" routerLink="/carts">
                     <i class="fa fa-shopping-cart" style="font-size:30px; cursor: pointer;"></i>
                 </a>
-                <a class="cart-menu-responsive" routerLink="/detail">
-                    <i class="fa fa-shopping-cart" style="font-size:30px; cursor: pointer;"></i>
-                </a>
-                <span class="count-cart text-white">0</span>
+                <span class="count-cart text-white">{{ count }}</span>
                 <div class="sub-menu animate__animated animate__zoomIn animate__faster">
                     <li><a>Giỏ Hàng</a></li>
                     <div class="group-detail-cart">
-                        <div class="detail-cart">
-                            <img src="" alt="#">
+                        <div class="detail-cart" *ngFor="let cart of carts">
+                            <img src="{{ cart.image }}" alt="#">
                             <div>
                                 <div style="font-weight: 600;">
-                                    <span>Cheese Dâu</span>
+                                    <span>{{ cart.name_product }}</span>
                                 </div>
                                 <div>
-                                    <span>Size: L</span>
+                                    <span>Size: {{ cart.size }}</span>
                                 </div>
-                                <span>2 x 70.000 VNĐ</span>
+                                <span>{{ cart.count }} x {{ cart.price | currency: 'VND' }}</span>
                             </div>
-                            <span class="delete-cart">x</span>
+                            <span class="delete-cart" (click)="deleteCart(cart.id_product)">x</span>
                         </div>
                     </div>
                     <div class="d-flex justify-content-between align-items-center" style="margin: .5rem 1rem; padding: .5rem 1rem;">
                         <span>Tổng tiền:</span>
-                        <span style="color: red; font-weight: 600;">50.000 VNĐ</span>
+                        <span style="color: red; font-weight: 600;">{{ total | currency: 'VND' }}</span>
                     </div>
-                    <div class="view-cart"><a routerLink="/detail">XEM GIỎ HÀNG</a></div>
+                    <div class="view-cart"><a routerLink="/carts">XEM GIỎ HÀNG</a></div>
                 </div> 
             </li>
             <li class="nav-bars">

@@ -1,27 +1,22 @@
-import { Component } from '@angular/core';
-import CartsLocal from './LocalStorage/carts.store';
-// import { Store } from '@ngrx/store';
-// import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-main',
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.css']
 })
-
-export class AppComponent {
-  
-  // statusMenu$: Observable<any>;
- 
-  // constructor(private store: Store<{ statusMenu: any }>) {
-  //   this.statusMenu$ = store.select('statusMenu');
-  // }
+export class MainComponent implements OnInit {
 
   carts: any
 
   total: any
 
   count: any
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 
   ngDoCheck(){
     
@@ -35,6 +30,7 @@ export class AppComponent {
     
   }
 
+  
   totalCart(carts: any, count: any, price: any){
 
     carts.map((value: any) => {
@@ -46,10 +42,5 @@ export class AppComponent {
     this.total = price 
   }
 
-  deleteCart(value: any){
-
-    CartsLocal.deleteProduct(value)
-
-  }
-
+  
 }

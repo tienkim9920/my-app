@@ -49,8 +49,6 @@ export class MainComponent implements OnInit {
 
   items: any
 
-  maxId: any
-
   constructor(public db: AngularFireDatabase, private http: HttpClient) {
 
   }
@@ -63,14 +61,13 @@ export class MainComponent implements OnInit {
 
   // Lấy danh sách sản phẩm
   getData(){
-    this.db.list('/product').valueChanges().subscribe(res => {
-      this.items = res
-      this.maxId = this.getLength(this.items)
-    })
-  }
+    // this.db.list('/product').valueChanges().subscribe(res => {
+    //   this.items = res
+    // })
 
-  getLength(value: any){
-    return value.length
+    this.db.list('/product').snapshotChanges().subscribe(res => {
+      this.items = res
+    })
   }
 
 }
