@@ -31,7 +31,7 @@
 <div class="section-gioithieu">
     <div class="layout-section-gioithieu container">
         <div class="section-gioithieu-right">
-            <img src="https://firebasestorage.googleapis.com/v0/b/todo-app-tienkim.appspot.com/o/noubakery%2Fsection-gioithieu2.jpg?alt=media&token=ca881614-cf02-4266-957a-a9ccaecdc6fa" alt="">
+            <img src="https://f20-zpc.zdn.vn/8260681974859824165/d8943a0cc9fb3da564ea.jpg" alt="">
         </div>
         <div class="section-gioithieu-left">
             <h2>Chào mừng đến với Nou Bakery</h2>
@@ -55,10 +55,10 @@
 <div class="section-bonus">
   <div class="container layout-section-bonus">
     <div class="section-bonus-right fix-colum-bonus border-bonus">
-      <a href="#"><img class="image-bonus" src="https://firebasestorage.googleapis.com/v0/b/todo-app-tienkim.appspot.com/o/noubakery%2Fbanner1.jpg?alt=media&token=0676d45d-b1da-42d6-aba9-1c00728582c6" alt=""></a>
+      <a href="#"><img class="image-bonus" src="https://f11.photo.talk.zdn.vn/4022600208498890422/cf4e2425d4d2208c79c3.jpg" alt=""></a>
     </div>
     <div class="section-bonus-left fix-colum-bonus border-bonus">
-      <a href="#"><img class="image-bonus" src="https://firebasestorage.googleapis.com/v0/b/todo-app-tienkim.appspot.com/o/noubakery%2Fbanner2.jpg?alt=media&token=11daca38-539a-46e7-8604-5fcc79f10d28" alt=""></a>
+      <a href="#"><img class="image-bonus" src="https://f7.photo.talk.zdn.vn/3798930807771261298/af6c4307b3f047ae1ee1.jpg" alt=""></a>
     </div>
   </div>
 </div>
@@ -76,7 +76,9 @@
         <div ngxSlickItem *ngFor="let item of items;" class="slide">
           <div class="group-slider-product">
               <div class="menu-product">
-                <a [routerLink]="['/detail', item.key]"><img class="menu-product-image" src="{{ item.payload.val().image }}" alt=""></a>
+                <a [routerLink]="['/detail', item.key]">
+                  <img class="menu-product-image" src="{{ item.payload.val().image }}" alt="">
+                </a>
               </div>
             <div class="product-box">
               <div class="pb-title">

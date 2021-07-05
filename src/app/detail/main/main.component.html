@@ -1,6 +1,17 @@
 
+
 <div class="section-detail-product">
     <div class="banner-detail"></div>
+    <div *ngIf="success">
+        <div class="modal-success">
+            <div class="pt-4 pb-1">
+                <div class="text-center">
+                    <i class="fa fa-bell fix_icon_bell"></i>
+                </div>
+                <h4 class="text-datmon">Bạn Đã Đặt Món Thành Công!</h4>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="layout-detail-product">
             <div class="section-detail-right fix-col-detail">

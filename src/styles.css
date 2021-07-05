@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 .banner-detail{
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/todo-app-tienkim.appspot.com/o/noubakery%2Fsection_detail.jpg?alt=media&token=0683a53e-d2d3-4c77-9c9d-f533151f4551);
+    background-image: url(https://f18-zpc.zdn.vn/2454709264627804192/838572ec991b6d45340a.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -56,6 +56,28 @@
     text-decoration: none;
     color: #000;
     cursor: pointer;
+}
+
+.section-cart-title{
+    padding: 3rem 0rem;
+    text-align: center;
+}
+
+.section-cart-title h2{
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+.section-cart-title span{
+    font-weight: 300;
+}
+
+.line-title{
+    margin: 0 auto;
+    width: 80px;
+    height: 5px;
+    background-color: #000;
 }
 
 @media only screen and (max-width: 600px) {

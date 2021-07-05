@@ -24,6 +24,8 @@ export class MainComponent implements OnInit {
 
   price: any
 
+  success: boolean = false
+
   constructor(private route: ActivatedRoute, public db: AngularFireDatabase) {
 
   }
@@ -54,6 +56,9 @@ export class MainComponent implements OnInit {
   }
 
   addCart(){
+
+    this.success = true
+
     const data = {
       id_product: this.id,
       name_product: this.product.name_product,
@@ -64,6 +69,10 @@ export class MainComponent implements OnInit {
     }
 
     CartsLocal.addProduct(data)
+
+    setTimeout(() => {
+      this.success = false
+    }, 2500)
   }
 
   changeSize(value: string){

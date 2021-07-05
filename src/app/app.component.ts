@@ -23,7 +23,17 @@ export class AppComponent {
 
   count: any
 
-  ngDoCheck(){
+  ngOnInit() {
+    if (localStorage.getItem('carts') !== null) {
+      this.carts = JSON.parse(localStorage.getItem('carts') || '[]')
+    } else {
+        localStorage.setItem('carts', JSON.stringify([]))
+    }
+
+    this.totalCart(this.carts, 0, 0)
+  }
+
+  ngAfterContentChecked(){
     
     if (localStorage.getItem('carts') !== null) {
       this.carts = JSON.parse(localStorage.getItem('carts') || '[]')
@@ -32,7 +42,6 @@ export class AppComponent {
     }
 
     this.totalCart(this.carts, 0, 0)
-    
   }
 
   totalCart(carts: any, count: any, price: any){

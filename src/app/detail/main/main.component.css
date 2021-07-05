@@ -98,6 +98,28 @@
     text-transform: uppercase;
 }
 
+.modal-success{
+	position: fixed !important;
+    top: 42%;
+	left: 37%;
+	z-index: 9999999;
+	background-color: hsla(0, 0%, 37%, 0.9);
+	width: 25rem;
+}
+
+.fix_icon_bell{
+	background-color: #00BFA5 !important;
+	padding: 1rem 1rem;
+	border-radius: 50%;
+    font-size:36px; color: #fff;
+}
+
+.text-datmon{
+    text-align: center;
+    padding: 1rem;
+    color: #fff;
+}
+
 @media only screen and (max-width: 600px) {
 
     .image-detail-product{
@@ -125,6 +147,11 @@
 
     .description{
         padding: 2rem 2rem;
+    }
+
+    .modal-success{
+        left: 10%;
+        width: 80%;
     }
 
 }

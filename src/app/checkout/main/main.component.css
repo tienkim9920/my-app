@@ -1,0 +1,79 @@
+
+.section-checkout{
+    padding-top: 5rem;
+}
+
+.group-checkout{
+    padding: 1rem 1rem 5rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+}
+
+.section-checkout-left{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.section-checkout-right{
+    background-color: #f1f1f1;
+    width: 80%;
+    margin: 0 auto;
+    font-family: 'Maven Pro', sans-serif;
+    padding: 2rem 3rem;
+}
+
+.form-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.font-form{
+    font-family: 'Maven Pro', sans-serif;
+}
+
+.fix-btn{
+    background-color: #ffba4b;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    padding: .5rem 0;
+}
+
+.bg-detail-checkout{
+    background-color: #e6e6e6;
+}
+
+.border-bottom-checkout{
+    border-bottom: 1px solid #a0a0a0;
+}
+
+.detail-checkout{
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0rem 1rem 0rem;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #dadada;
+}
+
+@media only screen and (max-width: 600px){
+
+    .form-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .group-checkout{
+        grid-template-columns: 1fr;
+        margin: auto;
+    }
+    .section-checkout-left{
+        width: 100%;
+    }
+
+    .section-checkout-right{
+        margin-top: 2rem;
+        width: 100%;
+        padding: 1rem 1.5rem;
+    }
+}

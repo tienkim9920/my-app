@@ -25,28 +25,6 @@
     height: 120px;
 }
 
-.section-cart-title{
-    padding: 3rem 0rem;
-    text-align: center;
-}
-
-.section-cart-title h2{
-    font-family: 'Open Sans Condensed', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: .1rem;
-}
-
-.section-cart-title span{
-    font-weight: 300;
-}
-
-.line-title{
-    margin: 0 auto;
-    width: 80px;
-    height: 5px;
-    background-color: #000;
-}
-
 .group-carts-left{
     display: grid;
     grid-template-columns: .3fr 1.7fr;
@@ -87,6 +65,7 @@
     background-color: #ffba4b;
     margin-top: 1rem;
     padding: .7rem .8rem;
+    cursor: pointer;
 }
 
 .title-dathang{
@@ -97,6 +76,7 @@
 .layout-flex-block{
     display: flex;
     justify-content: space-between;
+    margin-top: 1rem;
 }
 
 .pd-cart-left{
@@ -112,6 +92,7 @@
 
     .layout-flex-block{
         display: block;
+        margin-top: 0rem;
     }
 
     .pd-cart-left{

@@ -79,7 +79,7 @@ const CartsLocal = {
         const update_cart = JSON.parse(localStorage.getItem('carts') || '[]')
 
         const index = update_cart.findIndex((value: any) => {
-            return value.id_cart === data_update_cart.id_cart
+            return value.id_product === data_update_cart.id_product
         })
 
         update_cart[index].count = data_update_cart.count

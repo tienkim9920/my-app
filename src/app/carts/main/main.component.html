@@ -6,11 +6,11 @@
             <h2>
                 Giỏ hàng của bạn
             </h2>
-            <span>Có 2 sản phẩm trong giỏ hàng</span>
+            <span>Có {{ count }} sản phẩm trong giỏ hàng</span>
             <div class="line-title" style="margin-top: 2rem;"></div>
         </div>
         <div class="group-carts">
-            <div class="pd-cart-left">
+            <div class="pd-cart-left" *ngIf="showMessage; else content">
                 <div class="group-carts-left" *ngFor="let cart of carts">
                     <div class="margin-auto">
                         <img class="image-cart" src="{{ cart.image }}" alt="">
@@ -18,22 +18,23 @@
                     <div class="pd-cart">
                         <div class="d-flex justify-content-between">
                             <div class="detail-cart-title font-general">{{ cart.name_product }}</div>
-                            <i class="fa fa-close" style="font-size:24px; cursor: pointer;"></i>
+                            <i class="fa fa-close" style="font-size:24px; cursor: pointer;" (click)="deleteCart(cart.id_product)"></i>
                         </div>
                         <div><span class="detail-cart-size font-general">Kích cỡ: {{ cart.size }}</span></div>
-                        <div class="layout-flex-block" style="margin-top: 1rem;">
+                        <div class="layout-flex-block">
                             <div>
-                                <input type="button" value="-" class="qty-btn">
-                                <input type="text" class="quantity" name="quantity" value="1">
-                                <input type="button" value="+" class="qty-btn">
+                                <input type="button" value="-" class="qty-btn" (click)="downCount(cart.id_product, cart.count)">
+                                <input type="text" class="quantity" name="quantity" value="{{ cart.count }}">
+                                <input type="button" value="+" class="qty-btn" (click)="upCount(cart.id_product, cart.count)">
                             </div>
                             <span class="detail-cart-price font-general">
-                                {{ cart.price | currency: 'VND' }}
+                                {{ cart.price * cart.count | currency: 'VND' }}
                             </span>
                         </div>
                     </div>
                 </div>
             </div>
+            <ng-template #content><span class="title-dathang">Giỏ hàng của bạn đang trống</span></ng-template>
             <div class="group-carts-right">
                 <div class="content">
                     <div style="font-weight: 300;">
@@ -51,7 +52,7 @@
                         <span style="font-weight: 300;">Lưu ý: Khi bạn tiến hành quá trình đặt hàng vui lòng kiểm tra điện thoại.
                             Chúng tôi sẽ liên hệ đến bạn để xác nhận đơn hàng.</span>
                     </div>
-                    <div class="fix-dathang">
+                    <div class="fix-dathang" (click)="handlerDatHang()">
                         <a class="btn-dathang">Đặt hàng</a>
                     </div>
                 </div>
@@ -59,3 +60,4 @@
         </div>
     </div>
 </div>
+

@@ -1,0 +1,93 @@
+<div class="section-checkout">
+  <div class="banner-detail"></div>
+  <div class="container layout-section-checkout">
+    <div class="section-cart-title">
+      <h2>
+        Đặt hàng
+      </h2>
+      <div class="line-title" style="margin-top: 2rem;"></div>
+    </div>
+    <div class="group-checkout">
+      <div class="section-checkout-left">
+        <form class="font-form">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Họ tên:</label>
+            <input type="text" class="form-control" name="fullname" [(ngModel)]="fullname" 
+            (ngModelChange)="changeName($event)" placeholder="Vui lòng nhập họ và tên!">
+            <div *ngIf="errorName">
+              <span style="color: red;">Họ và tên không được để trống!</span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" [(ngModel)]="email"
+            (ngModelChange)="changeEmail($event)" placeholder="Vui lòng nhập địa chỉ email!">
+            <div *ngIf="errorEmail">
+              <span style="color: red;">Email không được để trống!</span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Số điện thoại</label>
+            <input type="text" class="form-control" name="phone" [(ngModel)]="phone"
+            (ngModelChange)="changePhone($event)" placeholder="Vui lòng nhập số điện thoại!">
+            <div *ngIf="errorPhone">
+              <span style="color: red;">Số điện thoại không được để trống!</span>
+            </div>
+          </div>
+          <div class="mb-3 form-grid">
+            <div class="form-left">
+              <label for="exampleInputPassword1" class="form-label">Tỉnh/Thành Phố</label>
+              <select class="form-select">
+                <option value="{{ selectCity }}">Thành phố Hồ Chí Minh</option>
+              </select>
+            </div>
+            <div class="form-mid">
+              <label for="exampleInputPassword1" class="form-label">Quận/Huyện</label>
+              <select class="form-select" [(ngModel)]="selectDistrict" (ngModelChange)="changeDistrict($event)" [ngModelOptions]="{standalone: true}">
+                <option *ngFor="let district of listDistrict" value="{{ district.name }}">{{ district.name }}</option>
+              </select>
+              <div *ngIf="errorDistrict">
+                <span style="color: red;">Quận không được để trống!</span>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Địa chỉ</label>
+            <input type="text" class="form-control" name="address" [(ngModel)]="address"
+            (ngModelChange)="changeAddress($event)" placeholder="Vui lòng nhập địa chỉ cụ thể!">
+            <div *ngIf="errorAddress">
+              <span style="color: red;">Địa chỉ không được để trống!</span>
+            </div>
+          </div>
+          <div style="text-align: center;" (click)="handlerOrder()">
+            <button type="submit" class="w-100 fix-btn">Đặt Hàng</button>
+          </div>
+        </form>
+      </div>
+      <div class="section-checkout-right">
+        <div class="border-bottom-checkout">
+          <h3>Thông tin đơn hàng</h3>
+        </div>
+        <div>
+          <div class="bg-detail-checkout detail-checkout">
+            <span>Product</span>
+            <span>Total</span>
+          </div>
+          <div class="detail-checkout" *ngFor="let cart of carts">
+            <span>{{ cart.name_product }} x {{ cart.count }}</span>
+            <span>{{ cart.count * cart.price | currency: 'VND' }}</span>
+          </div>
+          <div class="detail-checkout">
+            <span>Phí vận chuyển</span>
+            <span>{{ feeShip | currency: 'VND' }}</span>
+          </div>
+          <div class="d-flex justify-content-around" style="padding-top: 1rem;">
+            <h4>Tổng Đơn Hàng</h4>
+            <h4>{{ total + feeShip | currency: 'VND' }}</h4>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
