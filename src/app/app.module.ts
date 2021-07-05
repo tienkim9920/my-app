@@ -19,7 +19,6 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule } from '@angular/material/form-field'
 
 // Lấy config từ firebase
 const config = {
@@ -49,7 +48,6 @@ const config = {
     AngularFireAuthModule, // auth
     AngularFireStorageModule, // storage
     BrowserAnimationsModule ,
-    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
