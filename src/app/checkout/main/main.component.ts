@@ -74,7 +74,7 @@ export class MainComponent implements OnInit {
       create_time: `${new Date().getDate()}/${Number(new Date().getMonth()) + 1}/${new Date().getFullYear()}`
     }
 
-    this.db.list('/order').push(data)
+    const key = this.db.list('/order').push(data).key // Vừa push vào và lấy cả key
 
     for (let i = 0; i < this.carts.length; i++){
       
@@ -85,7 +85,7 @@ export class MainComponent implements OnInit {
         count: this.carts[i].count,
         idProduct: this.carts[i].id_product,
         image: this.carts[i].image,
-        idOrder: data.id
+        idOrder: key
       }
 
       this.db.list('/orderDetail').push(orderDetail)

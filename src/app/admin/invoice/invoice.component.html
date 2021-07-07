@@ -46,7 +46,7 @@
                                 <tr *ngFor="let value of invoice | filter:search">
                                     <th [ngSwitch]="value.payload.val().status">
                                         <div class="d-flex" *ngSwitchCase="'1'">
-                                            <input type="submit" class="btn btn-primary" value="Xem">
+                                            <a [routerLink]="['/admin/invoice', value.key]" type="submit" class="btn btn-primary">Xem</a>
                                             &nbsp;
                                             <input (click)="handlerConfirm(value.key)" type="submit" class="btn btn-success" value="Xác nhận">
                                             &nbsp;

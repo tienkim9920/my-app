@@ -1,1 +1,54 @@
-<p>detail works!</p>
+
+<div class="section-invoice-detail">
+    <div class="banner-detail"></div>
+    <div class="container">
+        <div class="section-cart-title">
+            <h2>
+              Chi tiết thông tin đơn hàng
+            </h2>
+            <div class="line-title" style="margin-top: 2rem;"></div>
+        </div>
+        <div class="layout-invoice-detail">
+            <div class="group-invoice-detail">
+                <div>
+                    <h5>Mã đơn Hàng: {{ id }}</h5>
+                    <h5>Họ và tên: {{ invoice.fullname }}</h5>
+                    <h5>Số điện thoại: {{ invoice.phone }}</h5>
+                    <h5>Địa chỉ: {{ invoice.address }}</h5>
+                    <h5>Email: {{ invoice.email }}</h5>
+                    <h5>Tổng tiền: {{ invoice.total }}</h5>
+                    <h5>Ngày đặt hàng: {{ invoice.create_time }}</h5>
+                    <h5 [ngSwitch]="invoice.status">Trạng thái đơn hàng: 
+                        <span *ngSwitchCase="1">Đang xử lý</span>
+                        <span *ngSwitchCase="2">Hoàn thành</span>
+                        <span *ngSwitchCase="3">Đã hủy</span>
+                    </h5>
+                </div>
+                <div class="table-responsive mt-5 mb-5">
+                    <table class="table">
+                        <thead>
+                          <tr style="background-color: #f7f7f7;">
+                            <th scope="col">Hình ảnh</th>
+                            <th scope="col">Tên sản phẩm</th>
+                            <th scope="col">Giá sản phẩm</th>
+                            <th scope="col">Kích cỡ</th>
+                            <th scope="col">Số lượng</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let product of products">
+                                <td>
+                                    <img style="width: 100px;" src="{{ product.image }}" alt="">
+                                </td>
+                                <td>{{ product.name }}</td>
+                                <td>{{ product.price }}</td>
+                                <td>{{ product.size }}</td>
+                                <td>{{ product.count }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

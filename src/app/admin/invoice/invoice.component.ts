@@ -53,7 +53,7 @@ export class InvoiceComponent implements OnInit {
 
   handlerCancel(value: any){
     if (confirm('Bạn có muốn xóa đơn hàng không')) {
-      console.log(value);
+      this.db.object(`/order/${value}`).update({ status: '3' });
     } else {
       console.log('Hủy xóa');
     }
