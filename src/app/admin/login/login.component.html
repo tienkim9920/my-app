@@ -1,0 +1,41 @@
+
+<div class="section-login">
+    <div class="banner-detail"></div>
+    <div class="container">
+        <div class="section-cart-title">
+            <h2>
+              Đăng nhập
+            </h2>
+            <div class="line-title" style="margin-top: 2rem;"></div>
+        </div>
+        <div class="layout-section-detail">
+            <form class="font-form width-form">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Tên đăng nhập:</label>
+                  <input type="text" class="form-control" name="username" [(ngModel)]="username" 
+                  (ngModelChange)="changeUsername($event)" placeholder="Vui lòng nhập tên đăng nhập!">
+                  <div *ngIf="errorUsername">
+                    <span style="color: red;">Tên đăng nhập không được để trống!</span>
+                  </div>
+                  <div *ngIf="checkUsername">
+                    <span style="color: red;">Tên đăng nhập không hợp lệ!</span>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Mật khẩu</label>
+                  <input type="password" class="form-control" name="password" [(ngModel)]="password"
+                  (ngModelChange)="changePassword($event)" placeholder="Vui lòng nhập mật khẩu!">
+                  <div *ngIf="errorPassword">
+                    <span style="color: red;">Mật khẩu không được để trống!</span>
+                  </div>
+                  <div *ngIf="checkPassword">
+                    <span style="color: red;">Mật khẩu không hợp lệ!</span>
+                  </div>
+                </div>
+                <div class="mb-3" (click)="handlerLogin()">
+                    <a class="btn btn-primary">Đăng nhập</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

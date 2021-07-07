@@ -1,0 +1,22 @@
+
+.section-login{
+    padding-top: 5rem;
+}
+
+.width-form{
+    width: 40%;
+    padding: 2rem 3rem 6rem 3rem;
+}
+
+.layout-section-detail{
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 600px){
+
+    .width-form{
+        width: 100%;
+    }
+
+}

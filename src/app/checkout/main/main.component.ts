@@ -46,7 +46,11 @@ export class MainComponent implements OnInit {
     if (localStorage.getItem('carts') !== null) {
       this.carts = JSON.parse(localStorage.getItem('carts') || '[]')
     } else {
-        localStorage.setItem('carts', JSON.stringify([]))
+      localStorage.setItem('carts', JSON.stringify([]))
+    }
+
+    if (this.carts.length < 1){
+      this.router.navigate(['/carts'])
     }
 
     this.totalCart(this.carts, 0, 0)

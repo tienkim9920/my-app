@@ -13,6 +13,12 @@
         </div>
     </div>
     <div class="container">
+        <div class="section-cart-title">
+            <h2>
+              Chi tiết sản phẩm
+            </h2>
+            <div class="line-title" style="margin-top: 2rem;"></div>
+        </div>
         <div class="layout-detail-product">
             <div class="section-detail-right fix-col-detail">
                 <img class="image-detail-product" src="{{ product.image }}">
@@ -49,7 +55,7 @@
         <div class="description">
             <div class="h2-description">Mô tả sản phẩm</div>
             <hr>
-            <span style="font-weight: 300;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi fuga quibusdam, repellat eveniet deleniti velit reiciendis esse? Placeat officiis sit aspernatur animi. Eaque nostrum eveniet nulla corrupti quae, ea sunt.</span>
+            <span style="font-weight: 300;">{{ product.describe }}</span>
         </div>
     </div>
 </div>

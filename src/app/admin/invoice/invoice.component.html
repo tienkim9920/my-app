@@ -1,0 +1,82 @@
+
+<div class="section-invoice">
+    <div class="banner-detail"></div>
+    <div class="container">
+        <div class="section-cart-title">
+            <h2>
+              Quản lý đơn hàng
+            </h2>
+            <div class="line-title" style="margin-top: 2rem;"></div>
+        </div>
+        <div class="pd-section-invoice">
+            <div class="layout-section-invoice">
+                <div class="invoice-left">
+                    <div class="nav-menu-invoice">
+                        <li (click)="clickInvoice('1')" 
+                            [ngClass]="statusInvoice === '1' ? 'active-invoice' : ''" 
+                            class="menu-invoice"><a>Đơn hàng</a></li>
+                        <li (click)="clickInvoice('2')" 
+                            [ngClass]="statusInvoice === '2' ? 'active-invoice' : ''" 
+                            class="menu-invoice"><a>Đơn hàng hoàn thành</a></li>
+                        <li (click)="clickInvoice('3')" 
+                            [ngClass]="statusInvoice === '3' ? 'active-invoice' : ''" 
+                            class="menu-invoice"><a>Đơn hàng hủy</a></li>
+                        <div class="search-invoice">
+                            <label for="exampleInputEmail1" class="form-label">Tìm kiếm:</label>
+                            <input type="text" class="form-control" name="search" [(ngModel)]="search">
+                        </div>
+                    </div>
+                </div>
+                <div class="invoice-right">
+                    <div class="pd-table-invoice">
+                        <table>
+                            <thead>
+                              <tr style="background-color: #f7f7f7;">
+                                <th scope="col">Chỉnh sửa</th>
+                                <th scope="col">Họ và tên</th>
+                                <th scope="col">Số điện thoại</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Địa chỉ</th>
+                                <th scope="col">Tổng tiền</th>
+                                <th scope="col">Trạng thái</th>
+                                <th scope="col">Ngày đặt hàng</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let value of invoice | filter:search">
+                                    <th [ngSwitch]="value.payload.val().status">
+                                        <div class="d-flex" *ngSwitchCase="'1'">
+                                            <input type="submit" class="btn btn-primary" value="Xem">
+                                            &nbsp;
+                                            <input (click)="handlerConfirm(value.key)" type="submit" class="btn btn-success" value="Xác nhận">
+                                            &nbsp;
+                                            <input (click)="handlerCancel(value.key)" type="submit" class="btn btn-danger" value="Hủy">
+                                        </div>
+                                        <div class="d-flex" *ngSwitchCase="'2'">
+                                            <input type="submit" class="btn btn-primary" value="Xem">
+                                        </div>
+                                        <div class="d-flex" *ngSwitchCase="'3'">
+                                            <input type="submit" class="btn btn-primary" value="Xem">
+                                        </div>
+                                    </th>
+                                    <td>{{ value.payload.val().fullname }}</td>
+                                    <td>{{ value.payload.val().phone }}</td>
+                                    <td>{{ value.payload.val().email }}</td>
+                                    <td>{{ value.payload.val().address }}</td>
+                                    <td>{{ value.payload.val().total | currency: 'VND' }}</td>
+                                    <td [ngSwitch]="value.payload.val().status">
+                                        <div class="text-warning" *ngSwitchCase="'1'">Đang xử lý</div>
+                                        <div class="text-success" *ngSwitchCase="'2'">Hoàn thành</div>
+                                        <div class="text-danger" *ngSwitchCase="'3'">Đã hủy</div>
+                                    </td>
+                                    <td>{{ value.payload.val().create_time }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
