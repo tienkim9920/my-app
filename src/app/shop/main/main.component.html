@@ -1,1 +1,33 @@
-<p>main works!</p>
+<div class="section-shop">
+    <div class="banner-detail"></div>
+    <div class="container">
+        <div class="section-cart-title">
+            <h2>
+                Danh sách sản phẩm
+            </h2>
+            <div class="line-title" style="margin-top: 2rem;"></div>
+        </div>
+        <div class="layout-section-shop">
+            <!-- <div class="search-invoice">
+                <label for="exampleInputEmail1" class="form-label">Tìm kiếm:</label>
+                <input type="text" class="form-control" name="search" [(ngModel)]="search">
+            </div> -->
+            <div class="product-shop" *ngFor="let product of products">
+                <div class="product-shop-image">
+                    <img src="{{ product.payload.val().image }}" alt="">
+                </div>
+                <div class="product-shop-detail">
+                    <div style="border-bottom: 1px solid #e2e2e2; margin-top: .8rem">
+                        <h5>{{ product.payload.val().name_product }}</h5>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <span>{{ product.payload.val().describe }}</span>
+                    </div>
+                    <div class="product-shop-view">
+                        <a [routerLink]="['/detail', product.key]">Xem sản phẩm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

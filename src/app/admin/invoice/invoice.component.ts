@@ -19,7 +19,6 @@ export class InvoiceComponent implements OnInit {
 
   count: number = 2
 
-  search: any
 
   constructor(private router: Router, private db: AngularFireDatabase) { }
 

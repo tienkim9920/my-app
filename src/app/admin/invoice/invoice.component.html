@@ -21,14 +21,10 @@
                         <li (click)="clickInvoice('3')" 
                             [ngClass]="statusInvoice === '3' ? 'active-invoice' : ''" 
                             class="menu-invoice"><a>Đơn hàng hủy</a></li>
-                        <div class="search-invoice">
-                            <label for="exampleInputEmail1" class="form-label">Tìm kiếm:</label>
-                            <input type="text" class="form-control" name="search" [(ngModel)]="search">
-                        </div>
                     </div>
                 </div>
                 <div class="invoice-right">
-                    <div class="pd-table-invoice">
+                    <div class="table-responsive pd-table-invoice">
                         <table>
                             <thead>
                               <tr style="background-color: #f7f7f7;">
@@ -43,7 +39,7 @@
                               </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let value of invoice | filter:search">
+                                <tr *ngFor="let value of invoice">
                                     <th [ngSwitch]="value.payload.val().status">
                                         <div class="d-flex" *ngSwitchCase="'1'">
                                             <a [routerLink]="['/admin/invoice', value.key]" type="submit" class="btn btn-primary">Xem</a>
@@ -53,10 +49,10 @@
                                             <input (click)="handlerCancel(value.key)" type="submit" class="btn btn-danger" value="Hủy">
                                         </div>
                                         <div class="d-flex" *ngSwitchCase="'2'">
-                                            <input type="submit" class="btn btn-primary" value="Xem">
+                                            <input [routerLink]="['/admin/invoice', value.key]" type="submit" class="btn btn-primary" value="Xem">
                                         </div>
                                         <div class="d-flex" *ngSwitchCase="'3'">
-                                            <input type="submit" class="btn btn-primary" value="Xem">
+                                            <input [routerLink]="['/admin/invoice', value.key]" type="submit" class="btn btn-primary" value="Xem">
                                         </div>
                                     </th>
                                     <td>{{ value.payload.val().fullname }}</td>
