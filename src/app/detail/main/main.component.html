@@ -42,7 +42,7 @@
                 </div>
                 <div class="group-witdh">
                     <input type="button" value="-" class="qty-btn" (click)="countDown(count)">
-                    <input type="text" class="quantity" name="quantity" [ngModel]="count" (ngModelChange)="valueChange($event)">
+                    <input type="text" class="quantity" name="quantity" [ngModel]="count" disabled>
                     <input type="button" value="+" class="qty-btn" (click)="countUp(count)">
                 </div>
                 <div class="group-witdh">

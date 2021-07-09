@@ -24,7 +24,7 @@
                         <div class="layout-flex-block">
                             <div>
                                 <input type="button" value="-" class="qty-btn" (click)="downCount(cart.id_product, cart.count)">
-                                <input type="text" class="quantity" name="quantity" value="{{ cart.count }}">
+                                <input type="text" class="quantity" name="quantity" value="{{ cart.count }}" disabled>
                                 <input type="button" value="+" class="qty-btn" (click)="upCount(cart.id_product, cart.count)">
                             </div>
                             <span class="detail-cart-price font-general">
